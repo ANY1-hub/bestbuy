@@ -59,11 +59,21 @@ class Product():
 
     def show(self):
         """
-        Prints a string that represents the product, for example:
+        Returns a printable string that represents the product, for example:
         "MacBook Air M1, Price: 1450, Quantity: 100"
         :return:
         """
-        print(f'{self.name}, Price: {self.price }, Quantity: {self.quantity}')
+        return (f'{self.name}, Price: {self.price},-EUR, Quantity: {self.quantity}')
+
+
+    def transform_to_dict(self):
+        """
+        Returns a product object that represents the product, for example:
+        {MacBook Air M1, {'Price': 1450, 'Quantity': 100}
+        :return:
+        """
+        product_item = dict({self.name:{ 'Price': self.price, 'Quantity': self.quantity}})
+        return product_item
 
 
     def buy(self, quantity) -> float:

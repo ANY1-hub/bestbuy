@@ -3,11 +3,11 @@ from products import Product
 
 class Store():
     """contains one variable - a list of products that exist in the store and facilitates multi product purchase"""
+
     def __init__(self, products: list):
         if not isinstance(products, list):
             raise ValueError('Sorry, this is not a list form')
         self.products = products
-
 
     def add_product(self, product):
         """
@@ -16,14 +16,12 @@ class Store():
         """
         self.products.append(product)
 
-
     def remove_product(self, product):
         """
         Removes a product from store.
         :param product: product
         """
         self.products.remove(product)
-
 
     def get_total_quantity(self) -> int:
         """
@@ -34,7 +32,6 @@ class Store():
         for product in self.products:
             number_of_products += product.get_quantity()
         return number_of_products
-
 
     def get_all_products(self) -> list[Product]:
         """
@@ -57,5 +54,7 @@ class Store():
         """
         shopping_list_total_price = 0
         for product, quantity in shopping_list:
-             shopping_list_total_price += product.buy(quantity)
+            shopping_list_total_price += product.buy(quantity)
         return shopping_list_total_price
+
+
