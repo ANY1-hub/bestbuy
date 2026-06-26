@@ -94,7 +94,8 @@ def get_order_input(store_instance):
                       f"{colors.NORMAL}{colors.RESET}")
                 continue
 
-            if input('\nWant to put another product in your cart? (y/*): ') not in ('y','yes'): break
+            if input('\nWant to put another product in your cart? (y/*): ') not in ('y','yes'):
+                break
     if cart:
         process_order(store_instance, cart)
 
@@ -107,7 +108,8 @@ def process_order(store_instance, shopping_cart:list[tuple[Product, int]]):
     print(f'Order value total: {store_instance.order(shopping_cart):.2f}EUR')
 
 
-menu_items = [("List all products in store", list_all_products_in_store), ("Show total quantity in store", show_total_items_in_store),
+menu_items = [("List all products in store", list_all_products_in_store),
+              ("Show total quantity in store", show_total_items_in_store),
               ("Make an order", get_order_input),
               ("Quit", None)]
 

@@ -44,17 +44,16 @@ class Store():
                 active_products.append(product)
         return active_products
 
+    @staticmethod
     def order(self, shopping_list: list[tuple[Product, int]]) -> float:
         """
         Gets a list of tuples, where each tuple has 2 items:
         Product (Product class) and quantity (int).
         Buys the products and returns the total price of the order.
         :param shopping_list:
-        :return: total price of the orde
+        :return: total price of the order
         """
         shopping_list_total_price = 0
         for product, quantity in shopping_list:
             shopping_list_total_price += product.buy(quantity)
         return shopping_list_total_price
-
-

@@ -1,7 +1,9 @@
 class Product():
-    """ Represents a specific type of product available in the store (For example, MacBook Air M2).
-        It encapsulates information about the product, including its name and price. It includes an
-        attribute to keep track of the total quantity of items of that product currently available in the store."""
+    """ Represents a specific type of product available in the store
+        (For example, MacBook Air M2). It encapsulates information about
+        the product, including its name and price. It includes an
+        attribute to keep track of the total quantity of items of
+        that product currently available in the store."""
     def __init__(self, name, price, quantity, active=True):
         if name == '':
             raise ValueError("Sorry, name is not allowed to be empty")
@@ -61,19 +63,9 @@ class Product():
         """
         Returns a printable string that represents the product, for example:
         "MacBook Air M1, Price: 1450, Quantity: 100"
-        :return:
+        :return: string representation of a product
         """
         return (f'{self.name}, Price: {self.price:.2f} EUR, Quantity: {self.quantity}')
-
-
-    def transform_to_dict(self):
-        """
-        Returns a product object that represents the product, for example:
-        {MacBook Air M1, {'Price': 1450, 'Quantity': 100}
-        :return:
-        """
-        product_item = dict({self.name:{ 'Price': self.price, 'Quantity': self.quantity}})
-        return product_item
 
 
     def buy(self, quantity) -> float:
