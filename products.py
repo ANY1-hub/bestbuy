@@ -75,9 +75,9 @@ class Product():
         :return: total price (float) of the purchase
         """
         if quantity < 0:
-            raise ValueError(f'Sorry, you cannot buy negative quantities.')
+            raise ValueError('Sorry, you cannot buy negative quantities.')
         if self.quantity - quantity < 0:
             raise ValueError(f'Sorry, we only have {self.quantity} in stock.')
-        else:
-            self.set_quantity(self.quantity - quantity)
-            return float(quantity * self.price)
+
+        self.set_quantity(self.quantity - quantity)
+        return float(quantity * self.price)

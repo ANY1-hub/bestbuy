@@ -1,4 +1,4 @@
-import config.colors as colors
+from config import colors
 import products
 import store
 
@@ -37,8 +37,7 @@ def start(store):
 
         if menu_choice == exit_item:
             break
-        else:
-            menu_items[menu_choice][1]()
+        menu_items[menu_choice][1]()
 
 
 
@@ -48,6 +47,7 @@ menu_items = [("List all products in sotre", None), ("Show total amount in store
 
 
 def main():
+    """Main entry point of the application."""
     print(
         f"\n\n{colors.GREEN_B}**********{colors.RESET_B} {colors.YELLOW} Best buy{colors.RESET} "
         f"{colors.GREEN_B}**********{colors.RESET_B}")
