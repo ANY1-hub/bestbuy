@@ -103,8 +103,8 @@ def process_order(store_instance, shopping_cart:list[tuple[Product, int]]):
     """processes the order"""
     for shopping_cart_item, qnty in shopping_cart:
         print(f'{shopping_cart_item.name}: quantity: {qnty}, '
-              f'preis: {qnty * shopping_cart_item.price}')
-    print(f'Order value total: {store_instance.order(shopping_cart)}EUR')
+              f'preis: {qnty * shopping_cart_item.price}:.2f')
+    print(f'Order value total: {store_instance.order(shopping_cart):.2f}EUR')
 
 
 menu_items = [("List all products in store", list_all_products_in_store), ("Show total quantity in store", show_total_items_in_store),

@@ -63,7 +63,7 @@ class Product():
         "MacBook Air M1, Price: 1450, Quantity: 100"
         :return:
         """
-        return (f'{self.name}, Price: {self.price},-EUR, Quantity: {self.quantity}')
+        return (f'{self.name}, Price: {self.price:.2f} EUR, Quantity: {self.quantity}')
 
 
     def transform_to_dict(self):
