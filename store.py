@@ -44,7 +44,7 @@ class Store():
                 active_products.append(product)
         return active_products
 
-    @staticmethod
+
     def order(self, shopping_list: list[tuple[Product, int]]) -> float:
         """
         Gets a list of tuples, where each tuple has 2 items:
